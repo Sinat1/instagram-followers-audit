@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/instagram-followers-audit/static/css/main.b5320759.css",
+    "main.js": "/instagram-followers-audit/static/js/main.f063925b.js",
+    "index.html": "/instagram-followers-audit/index.html",
+    "main.b5320759.css.map": "/instagram-followers-audit/static/css/main.b5320759.css.map",
+    "main.f063925b.js.map": "/instagram-followers-audit/static/js/main.f063925b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b5320759.css",
+    "static/js/main.f063925b.js"
+  ]
+}
