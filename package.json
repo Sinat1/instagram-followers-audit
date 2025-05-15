@@ -1,8 +1,8 @@
 {
-  "name": "react-hw-01-components",
+  "name": "instagram-followers-audit",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Sinat1.github.io/spa-react-build/",
+  "homepage": "https://Sinat1.github.io/instagram-followers-audit/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
