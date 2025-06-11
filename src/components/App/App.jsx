@@ -56,11 +56,16 @@ export const App = () => {
           .filter(Boolean)
       );
 
-      const result = [...following].filter(user => !followers.has(user));
+      const result = [...following]
+        .filter(user => !followers.has(user))
+        .map(user => ({
+          name: user,
+          href: `https://www.instagram.com/${user}`,
+        }));
       setUnfollowers(result);
     } catch (err) {
       console.error(err);
-      setError('Ошибка при обработке файла: ' + err.message);
+      setError('An error occurred while processing the file: ' + err.message);
     }
   };
 
@@ -80,6 +85,7 @@ export const App = () => {
   const clearUnfollowers = () => {
     setUnfollowers([]);
     localStorage.removeItem(STORAGE_KEY);
+    localStorage.removeItem('lastVisitedUser');
   };
 
   return (

@@ -17,6 +17,10 @@ export const ClearButton = styled.button`
   top: 5px;
   right: 15px;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   margin-top: 0.5rem;
   background-color: transparent;
   color: #ff5555;
@@ -79,10 +83,36 @@ export const UnfollowerItem = styled.li`
   background-color: #f9f9f9;
   border-radius: 8px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
-  color: #333;
   transition: background 0.2s ease;
+  position: relative;
 
   &:hover {
     background-color: #f1f1f1;
+  }
+
+  &[data-active='true'] {
+    background-color: #e6f7ff;
+  }
+
+  &[data-active='true']::after {
+    content: '←';
+    position: absolute;
+    left: -1.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #007aff;
+    font-size: 1.2rem;
+  }
+`;
+
+export const UnFollowersLink = styled.a`
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: #333;
+
+  @media screen and (min-width: 320px) and (max-width: 380px) {
+    font-size: 14px;
   }
 `;

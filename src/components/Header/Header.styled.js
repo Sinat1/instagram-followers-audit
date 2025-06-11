@@ -14,7 +14,6 @@ export const StyledHeader = styled.header`
   font-family: 'Lobster', sans-serif;
   font-weight: 400;
   font-style: normal;
-  border-radius: 16px;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
   /* text-transform: uppercase; */
 `;
