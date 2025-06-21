@@ -6,16 +6,9 @@ export const StyledHeader = styled.header`
   display: flex;
   align-items: center;
   padding: 15px 0;
-  /* padding-bottom: 50px; */
-  /* border-bottom: 1px solid gray; */
-  /* justify-content: space-between; */
 
-  /* font-family: 'Bebas Neue', sans-serif; */
-  font-family: 'Lobster', sans-serif;
-  font-weight: 400;
-  font-style: normal;
+  font-family: 'Inter', sans-serif;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
-  /* text-transform: uppercase; */
 `;
 
 export const StyledHeaderLogo = styled.a`

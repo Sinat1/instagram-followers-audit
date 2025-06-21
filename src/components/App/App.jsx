@@ -1,6 +1,7 @@
 import { AppContainer } from './App.styled.js';
 import { useState, useEffect } from 'react';
 import Header from 'components/Header/Header.jsx';
+import Description from 'components/Description/Description.jsx';
 import StepGuide from 'components/StepGuide/StepGuide.jsx';
 import FileUpload from 'components/FileUpload/FileUpload.jsx';
 import UnFollowList from 'components/UnfollowersList/UnfollowersList.jsx';
@@ -92,6 +93,7 @@ export const App = () => {
     <AppContainer>
       <Header />
       <div style={{ padding: '2.5rem' }}>
+        <Description />
         <StepGuide />
         <FileUpload onUpload={handleFileUpload} />
         {error && <p style={{ color: 'red' }}>{error}</p>}
