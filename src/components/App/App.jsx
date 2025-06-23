@@ -6,6 +6,7 @@ import StepGuide from 'components/StepGuide/StepGuide.jsx';
 import FileUpload from 'components/FileUpload/FileUpload.jsx';
 import UnFollowList from 'components/UnfollowersList/UnfollowersList.jsx';
 import Footer from 'components/Footer/Footer.jsx';
+import ScrollToTop from 'components/ToTopBtn/ToTopBtn.jsx';
 
 const STORAGE_KEY = 'unfollowersList';
 
@@ -105,6 +106,7 @@ export const App = () => {
         )}
       </div>
       <Footer />
+      <ScrollToTop />
     </AppContainer>
   );
 };

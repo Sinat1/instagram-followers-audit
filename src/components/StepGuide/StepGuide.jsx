@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import {
   StepGuideWrapper,
   StepTitle,
@@ -86,10 +86,6 @@ const StepGuide = () => {
         'Now you should have ‘connections’ folder and download it using field below',
     },
   ];
-
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [step]);
 
   return (
     <StepGuideWrapper>
