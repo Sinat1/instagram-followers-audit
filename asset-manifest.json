@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/instagram-followers-audit/static/css/main.b5320759.css",
-    "main.js": "/instagram-followers-audit/static/js/main.a3ed25ac.js",
+    "main.js": "/instagram-followers-audit/static/js/main.a371d158.js",
     "static/media/icon-spy.svg": "/instagram-followers-audit/static/media/icon-spy.b1c1270351ecdcd1df24329dfa502a7d.svg",
     "index.html": "/instagram-followers-audit/index.html",
     "static/media/icon-github.svg": "/instagram-followers-audit/static/media/icon-github.95b14098b1769deab89a253a055cb198.svg",
@@ -9,13 +9,14 @@
     "static/media/icon-location.svg": "/instagram-followers-audit/static/media/icon-location.f43ec73ae226dcdf55a14a0b87108841.svg",
     "static/media/icon-phone.svg": "/instagram-followers-audit/static/media/icon-phone.5b9aa334c32b9b4b0aa6a640070c837d.svg",
     "static/media/icon-telegram.svg": "/instagram-followers-audit/static/media/icon-telegram.dca9edc076b358b8ffd93ad1d5e88581.svg",
+    "static/media/icon-up.svg": "/instagram-followers-audit/static/media/icon-up.2230e53cca8132a7ddf5b92acac0cb5e.svg",
     "static/media/icon-linkedin.svg": "/instagram-followers-audit/static/media/icon-linkedin.bbca298b72a2167bca537dd28f4ffc3b.svg",
     "static/media/icon-cross.svg": "/instagram-followers-audit/static/media/icon-cross.788dd903c9a4cbd982c2da233d6fe1dc.svg",
     "main.b5320759.css.map": "/instagram-followers-audit/static/css/main.b5320759.css.map",
-    "main.a3ed25ac.js.map": "/instagram-followers-audit/static/js/main.a3ed25ac.js.map"
+    "main.a371d158.js.map": "/instagram-followers-audit/static/js/main.a371d158.js.map"
   },
   "entrypoints": [
     "static/css/main.b5320759.css",
-    "static/js/main.a3ed25ac.js"
+    "static/js/main.a371d158.js"
   ]
 }
