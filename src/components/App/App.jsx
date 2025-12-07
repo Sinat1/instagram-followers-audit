@@ -14,24 +14,45 @@ export const App = () => {
   const [unfollowers, setUnfollowers] = useState([]);
   const [error, setError] = useState('');
 
+  // Universal function for getting username (new + old format)
+  const getUsername = entry => {
+    if (!entry) return null;
+
+    // New format → username in title
+    if (entry.title && entry.title.trim() !== '') {
+      return entry.title.trim();
+    }
+
+    const data = entry.string_list_data?.[0];
+
+    // Old format → username in value
+    if (data?.value) {
+      return data.value.trim();
+    }
+
+    // Parse username from href
+    if (data?.href) {
+      const match = data.href.match(/instagram\.com\/(?:_u\/)?([^/?]+)/);
+      if (match) return match[1];
+    }
+
+    return null;
+  };
+
   const handleFileUpload = async event => {
     setError('');
     setUnfollowers([]);
 
     const files = event.dataTransfer?.files || event.target?.files;
-
     if (!files || files.length === 0) return;
 
     try {
       let followersFile, followingFile;
 
+      // Searching for necessary files
       for (const file of files) {
-        if (file.name === 'followers_1.json') {
-          followersFile = file;
-        }
-        if (file.name === 'following.json') {
-          followingFile = file;
-        }
+        if (file.name === 'followers_1.json') followersFile = file;
+        if (file.name === 'following.json') followingFile = file;
       }
 
       if (!followersFile || !followingFile) {
@@ -46,24 +67,28 @@ export const App = () => {
       const followersJson = JSON.parse(followersText);
       const followingJson = JSON.parse(followingText);
 
-      const following = new Set(
-        (followingJson.relationships_following || [])
-          .map(e => e.string_list_data?.[0]?.value)
-          .filter(Boolean)
-      );
+      // Followers
+      const followersArray = (followersJson || [])
+        .map(getUsername)
+        .filter(Boolean);
 
-      const followers = new Set(
-        (followersJson || [])
-          .map(e => e.string_list_data?.[0]?.value)
-          .filter(Boolean)
-      );
+      const followers = new Set(followersArray);
 
+      // Following
+      const followingArray = (followingJson.relationships_following || [])
+        .map(getUsername)
+        .filter(Boolean);
+
+      const following = new Set(followingArray);
+
+      // Unfollowers (following - followers)
       const result = [...following]
         .filter(user => !followers.has(user))
         .map(user => ({
           name: user,
-          href: `https://www.instagram.com/${user}`,
+          href: `https://www.instagram.com/${user}/`,
         }));
+
       setUnfollowers(result);
     } catch (err) {
       console.error(err);
@@ -97,7 +122,9 @@ export const App = () => {
         <Description />
         <StepGuide />
         <FileUpload onUpload={handleFileUpload} />
+
         {error && <p style={{ color: 'red' }}>{error}</p>}
+
         {unfollowers.length > 0 && (
           <UnFollowList
             unfollowers={unfollowers}

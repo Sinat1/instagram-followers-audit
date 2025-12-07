@@ -14,21 +14,6 @@ const FileUpload = ({ onUpload }) => {
     setIsDragging(false);
   };
 
-  //   const handleDrop = e => {
-  //     e.preventDefault();
-  //     setIsDragging(false);
-
-  //     const items = e.dataTransfer.items;
-  //     const files = e.dataTransfer.files;
-  //     if (items && items[0]?.webkitGetAsEntry?.()?.isDirectory) {
-  //       onUpload({ dataTransfer: { files } }); // ← передаем в поле dataTransfer, как будто drag&drop
-  //     } else {
-  //       alert(
-  //         'Пожалуйста, перетащите всю папку (connections), а не отдельные файлы.'
-  //       );
-  //     }
-  //   };
-
   const handleDrop = async e => {
     e.preventDefault();
     setIsDragging(false);
@@ -70,7 +55,7 @@ const FileUpload = ({ onUpload }) => {
     onUpload({ target: { files: allFiles } });
   };
   const handleChange = e => {
-    onUpload(e); // Просто пробрасываем в App
+    onUpload(e);
   };
 
   return (
