@@ -13,7 +13,7 @@ export const UploadContainer = styled.label`
   align-items: center;
   border: 2px dashed
     ${({ $isDragging }) => ($isDragging ? '#7aa7ff' : '#add8e6')};
-  /* #ceca */
+
   border-radius: 1rem;
   width: 100%;
   height: 234px;
@@ -41,19 +41,6 @@ export const UploadContainer = styled.label`
     color: #565656;
   }
 `;
-
-// export const HiddenInput = styled.input`
-//   display: none;
-// `;
-
-// export const HiddenInput = styled.input.attrs(({ $webkit, $dir }) => ({
-//   type: 'file',
-//   multiple: true,
-//   ...(!!$webkit && { webkitdirectory: 'true' }),
-//   ...(!!$dir && { directory: 'true' }),
-// }))`
-//   display: none;
-// `;
 
 export const HiddenInput = styled.input.attrs(({ $webkit, $dir }) => ({
   type: 'file',
