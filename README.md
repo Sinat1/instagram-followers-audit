@@ -1,70 +1,104 @@
-# Getting Started with Create React App
+# 📊 Instagram Followers Audit
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A web app that shows which accounts you follow **don't follow you back**.
 
-## Available Scripts
+Everything runs entirely in your browser — your Instagram data never leaves your
+device, there's no server involved.
 
-In the project directory, you can run:
+🔗 **Live demo:** https://sinat1.github.io/instagram-followers-audit/
 
-### `npm start`
+## How it works
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Export your Instagram data archive (via Meta Accounts Center) in JSON format.
+2. Drag & drop the `connections` folder into the app or specifically choose it.
+3. The app compares your followers and following lists right in the browser and
+   shows you accounts that don't follow you back, with links to their profiles.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+A step-by-step guide for exporting your data is built right into the app (a
+15-step slider) — from opening Accounts Center to downloading the archive in
+JSON format.
 
-### `npm test`
+## Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- 📁 **Drag & drop** folder upload (including nested directories) or file picker
+- 🔍 Compares `following.json` and `followers_1.json`, supporting both old and
+  new Instagram export formats (`title`, `string_list_data.value`, or parsing
+  the username from `href`)
+- 💾 Results are saved to `localStorage` so the list doesn't need to be
+  recalculated on page reload
+- 🔗 Direct links to the profiles of accounts that don't follow back
+- 🧭 Remembers the last viewed account in the list (with auto-scroll to it)
+- 🗑️ Button to clear results
+- ⬆️ "Back to top" button for long lists
+- ⌨️ Keyboard arrow navigation through the guide slides
 
-### `npm run build`
+## Tech stack
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [React](https://react.dev/) 18
+- [Create React App](https://create-react-app.dev/) (react-scripts 5)
+- [styled-components](https://styled-components.com/) 6 — component styling
+- [keen-slider](https://keen-slider.io/) — step-by-step guide slider
+- [jszip](https://stuk.github.io/jszip/) — zip archive handling
+- ESLint + Prettier — linting and formatting
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Installation & running locally
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+git clone https://github.com/Sinat1/instagram-followers-audit.git
+cd instagram-followers-audit
+npm install
+npm start
+```
 
-### `npm run eject`
+The app will open at [http://localhost:3000](http://localhost:3000).
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Available scripts
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+| Command           | Description                                           |
+| ----------------- | ----------------------------------------------------- |
+| `npm start`       | Runs the app in development mode                      |
+| `npm run build`   | Builds the production version into the `build` folder |
+| `npm test`        | Runs tests                                            |
+| `npm run lint:js` | Runs ESLint on the source code                        |
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## How to get your Instagram data
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. Open [Accounts Center](https://accountscenter.instagram.com)
+2. Log in to the account you want to check
+3. Click "Your information and permissions"
+4. Click "Download your information"
+5. Choose "Download or transfer information"
+6. Choose the account you want to use
+7. Click "Some of your information"
+8. Scroll down, select "Followers and Following", then click Next
+9. Click "Download to Device"
+10. Change the date range from "Last Year" to "All Time" and save
+11. Change the format from HTML to JSON and save
+12. Click "Create Files"
+13. Instagram will email you when the download is ready
+14. Once you receive the email, download the archive and unzip it
+15. Upload the `connections` folder into the app
 
-## Learn More
+## Project structure
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+src/
+├── components/
+│   ├── App/                  # Root component, list comparison logic
+│   ├── Header/                # Header
+│   ├── Description/            # Project description
+│   ├── StepGuide/                # Slider with the data export guide
+│   ├── FileUpload/                 # Drag & drop / file picker
+│   ├── UnfollowersList/              # List of accounts that don't follow back
+│   ├── ToTopBtn/                       # "Back to top" button
+│   └── Footer/                          # Footer
+├── images/                    # Icons (SVG)
+├── index.js
+└── index.css
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Privacy
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The app doesn't use a server and never sends your data anywhere outside your
+browser — the comparison happens entirely on the client, and the results are
+only saved to your browser's `localStorage`.
