@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/instagram-followers-audit/static/css/main.57d85fa2.css",
-    "main.js": "/instagram-followers-audit/static/js/main.cc547bd6.js",
+    "main.js": "/instagram-followers-audit/static/js/main.a3a54dbf.js",
     "static/media/icon-spy.svg": "/instagram-followers-audit/static/media/icon-spy.b1c1270351ecdcd1df24329dfa502a7d.svg",
     "index.html": "/instagram-followers-audit/index.html",
     "static/media/icon-github.svg": "/instagram-followers-audit/static/media/icon-github.95b14098b1769deab89a253a055cb198.svg",
@@ -15,10 +15,10 @@
     "static/media/icon-arrow-left.svg": "/instagram-followers-audit/static/media/icon-arrow-left.286d7e6f65c71e8dda19edef0bea922c.svg",
     "static/media/icon-arrow-right.svg": "/instagram-followers-audit/static/media/icon-arrow-right.1ba4199865d1a12a700e81c96284e415.svg",
     "main.57d85fa2.css.map": "/instagram-followers-audit/static/css/main.57d85fa2.css.map",
-    "main.cc547bd6.js.map": "/instagram-followers-audit/static/js/main.cc547bd6.js.map"
+    "main.a3a54dbf.js.map": "/instagram-followers-audit/static/js/main.a3a54dbf.js.map"
   },
   "entrypoints": [
     "static/css/main.57d85fa2.css",
-    "static/js/main.cc547bd6.js"
+    "static/js/main.a3a54dbf.js"
   ]
 }
